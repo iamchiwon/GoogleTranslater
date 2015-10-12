@@ -10,8 +10,11 @@
 **Request** : https://translate.google.co.kr/translate_a/single?client=t&sl=auto&tl=en&hl=ko&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&dt=at&ie=UTF-8&oe=UTF-8&otf=2&ssel=0&tsel=0&kc=2&tk=365832|232076&q=%EB%88%84%EA%B5%AC%EB%83%90%20%EB%84%88
 
 GET 요청이 된다. 파라미터 중에서 다음 항목들이 언어설정과 요청되는 텍스트를 전달하는 것 처럼 보인다. (다른 파라미터는 뭔지 모르겠고)
+
 1. **&tl=en**
+
 2. **&hl=ko**
+
 3. **&q=%EB%88%84%EA%B5%AC%EB%83%90%20%EB%84%88**
 
 
