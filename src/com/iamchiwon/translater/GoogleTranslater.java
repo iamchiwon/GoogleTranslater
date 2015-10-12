@@ -13,9 +13,21 @@ public class GoogleTranslater {
 	public static void main(String[] args) {
 		try {
 			GoogleTranslater translater = new GoogleTranslater();
+			
+			//for CLI
+			if(args.length == 3) {
+				translater.from(new Locale(args[0]));
+				translater.to(new Locale(args[1]));
+				String result = translater.translate(args[2]);
+				System.out.println(result);
+				return;
+			}
+
+			//for Interaction
+			
 			translater.from(Locale.KOREAN);
 			translater.to(Locale.FRENCH);
-
+			
 			BufferedReader bin = new BufferedReader(new InputStreamReader(System.in));
 			while (true) {
 				System.out.print("<< ");
