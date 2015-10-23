@@ -10,41 +10,18 @@ import java.util.Locale;
 
 public class GoogleTranslater {
 
-	public static void main(String[] args) {
-		try {
-			GoogleTranslater translater = new GoogleTranslater();
-			
-			//for CLI
-			if(args.length == 3) {
-				translater.from(new Locale(args[0]));
-				translater.to(new Locale(args[1]));
-				String result = translater.translate(args[2]);
-				System.out.println(result);
-				return;
-			}
-
-			//for Interaction
-			
-			translater.from(Locale.KOREAN);
-			translater.to(Locale.FRENCH);
-			
-			BufferedReader bin = new BufferedReader(new InputStreamReader(System.in));
-			while (true) {
-				System.out.print("<< ");
-				String line = bin.readLine();
-				if (line.equals("exit") || line.equals("quit"))
-					break;
-
-				String result = translater.translate(line);
-				System.out.println(">> " + result);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	private Locale fromLang, toLang;
+
+	public GoogleTranslater() {
+		//default
+		this.fromLang = Locale.KOREAN;
+		this.toLang = Locale.ENGLISH;
+	}
+	
+	public GoogleTranslater(final Locale fromLang, final Locale toLang) {
+		this.fromLang = fromLang;
+		this.toLang = toLang;
+	}
 
 	public void from(final Locale fromLang) {
 		this.fromLang = fromLang;

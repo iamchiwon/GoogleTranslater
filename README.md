@@ -40,10 +40,6 @@ GET 요청이 된다. 파라미터 중에서 다음 항목들이 언어설정과
 
 **실행결과**
 
-console
-```
-java com.iamchiwon.translater.GoogleTranslater ko fr 안녕하세요
-```
 
 interaction
 ```
