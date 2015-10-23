@@ -19,8 +19,8 @@ import org.w3c.dom.NodeList;
 public class AndroidStringTranslator {
 	public static void main(String[] args) throws Exception {
 
-		String inputFilePath = "string.xml";
-		String outputFilePath = "string-fr.xml";
+		final String inputFilePath = "string.xml";
+		final String outputFilePath = "string-fr.xml";
 
 		DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 		GoogleTranslater translator = new GoogleTranslater(Locale.ENGLISH, Locale.FRENCH);
