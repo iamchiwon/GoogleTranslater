@@ -79,7 +79,7 @@ DOM Parser 를 사용하여 string.xml 을 읽고 문자열을 번역기를 통�
 
 ###5. 활용2 (iOSStringTranslator)
 
-( 다음에 ) 
+( TODO ) 
 
 ###4. Reference
 - https://translate.google.com/
