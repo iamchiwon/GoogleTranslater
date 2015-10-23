@@ -53,7 +53,37 @@ interaction
 문자를 입력 받아서 구글 번역 사이트에 요청해서 결과를 받아오는 실행 결과다.
 입력은 한국어. 출력은 프랑스어로 해봤다.
 
+###4. 활용1 (AndroidStringTranslator)
+
+안드로이드에서 사용되는 string.xml 을 변역한 결과로 생성하도록 한다.
+
+**Source:** string.xml
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">My Application</string>
+    <string name="hello_world">Hello World!</string>
+</resources>
+```
+
+**Output:** string-fr.xml
+```
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="title">Mon application</string>
+    <string name="hello_world">Bonjour le monde!</string>
+</resources>
+```
+
+DOM Parser 를 사용하여 string.xml 을 읽고 문자열을 번역기를 통해 얻은 결과로 치환하여 파일로 재 저장한다.
+
+###5. 활용2 (iOSStringTranslator)
+
+( 다음에 ) 
+
 ###4. Reference
 - https://translate.google.com/
 - http://docs.oracle.com/javase/6/docs/api/java/util/Locale.html
 - http://useragentstring.com/index.php
+- http://developer.android.com/training/basics/supporting-devices/languages.html
+
