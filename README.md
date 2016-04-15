@@ -14,16 +14,21 @@
 ~~(다른 파라미터는 뭔지 모르겠고)~~
 
 ~~1. **&tl=en**~~
+
 ~~2. **&hl=ko**~~
+
 ~~3. **&q=%EB%88%84%EA%B5%AC%EB%83%90%20%EB%84%88**~~
 
 시간이 얼마 지난 후에 다시 시도하면 403 에러가 난다. 이렇게 요청하면 안되나 보다.
+
 [한 블로그](https://ctrlq.org/code/19909-google-translate-api) 를 통해서 Chrome의 Translate Extension 이 Request 하는 URI 를 알았다.
 
 https://translate.googleapis.com/translate_a/single?client=gtx
 
 1. **&sl=en** : source language
+2. 
 2. **&tl=fr** : target language
+3. 
 3. **&dt=t&q=Hello+World** : query text
 
 
