@@ -30,14 +30,14 @@ https://translate.googleapis.com/translate_a/single?client=gtx
 ###2. 처리 결과 (Response)
 
 브라우저에서 위 링크를 연결하니까 txt 파일이 하나 다운로드 된다. 그 내용은 이렇다.
-```
+```json
 [[["Who are you","누구냐 너",,,0],[,,,"nugunya neo"]],,"ko",,,[["누구냐",1,[["Who are",966,true,false],["Who",26,true,false],["Who is",6,true,false],["Who art",0,true,false]],[[0,3]],"누구냐 너",0,2],["너",2,[["you",771,true,false],["too",0,true,false]],[[4,5]],,2,3]],0.038472954,,[["ko"],,[0.038472954]]]
 ```
 이거 뭐야? JSON도 아니고..
 내용을 보니, 첫번째 문자열 "..." 에서 원하는 문구가 모두 있다. 이 부분만 떼도록 해보자.
 첫번쩨 " 를 찾고, 두번째 " 를 찾아서 그 사이의 문자만 찾아낸다.
 
-```Java
+```java
     private String parse(String source) {
 		int index = source.indexOf('\"');
 		int index2 = source.indexOf('\"', index + 1);
@@ -52,7 +52,7 @@ https://translate.googleapis.com/translate_a/single?client=gtx
 
 
 interaction
-```
+```console
 << 안녕하세요
 >> Bonjour
 << 누구냐 넌
@@ -68,7 +68,7 @@ interaction
 안드로이드에서 사용되는 string.xml 을 변역한 결과로 생성하도록 한다.
 
 **Source:** string.xml
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="title">My Application</string>
@@ -77,7 +77,7 @@ interaction
 ```
 
 **Output:** string-fr.xml
-```
+```xml
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
     <string name="title">Mon application</string>
