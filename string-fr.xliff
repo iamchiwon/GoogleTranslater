@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file datatype="plaintext" original="My Application/Base.lproj/LaunchScreen.storyboard" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="7D175" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3"/>
+    </header>
+    <body/>
+  </file>
+  <file datatype="plaintext" original="My Application/Base.lproj/Main.storyboard" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="7D175" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3"/>
+    </header>
+    <body>
+      <trans-unit id="L0B-Ka-xwb.text">
+        <source>Hello World</source>
+        <target>Bonjour le monde</target>
+        <note>Class = "UILabel"; text = "Hello World"; ObjectID = "L0B-Ka-xwb";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file datatype="plaintext" original="My Application/Info.plist" source-language="en" target-language="fr">
+    <header>
+      <tool build-num="7D175" tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

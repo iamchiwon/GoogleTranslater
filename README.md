@@ -9,12 +9,22 @@
 
 **Request** : https://translate.google.co.kr/translate_a/single?client=t&sl=auto&tl=en&hl=ko&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&dt=at&ie=UTF-8&oe=UTF-8&otf=2&ssel=0&tsel=0&kc=2&tk=365832|232076&q=%EB%88%84%EA%B5%AC%EB%83%90%20%EB%84%88
 
-GET 요청이 된다. 파라미터 중에서 다음 항목들이 언어설정과 요청되는 텍스트를 전달하는 것 처럼 보인다.
-(다른 파라미터는 뭔지 모르겠고)
 
-1. **&tl=en**
-2. **&hl=ko**
-3. **&q=%EB%88%84%EA%B5%AC%EB%83%90%20%EB%84%88**
+~~GET 요청이 된다. 파라미터 중에서 다음 항목들이 언어설정과 요청되는 텍스트를 전달하는 것 처럼 보인다.~~
+~~(다른 파라미터는 뭔지 모르겠고)~~
+
+~~1. **&tl=en**~~
+~~2. **&hl=ko**~~
+~~3. **&q=%EB%88%84%EA%B5%AC%EB%83%90%20%EB%84%88**~~
+
+시간이 얼마 지난 후에 다시 시도하면 403 에러가 난다. 이렇게 요청하면 안되나 보다.
+[한 블로그](https://ctrlq.org/code/19909-google-translate-api) 를 통해서 Chrome의 Translate Extension 이 Request 하는 URI 를 알았다.
+
+https://translate.googleapis.com/translate_a/single?client=gtx
+
+1. **&sl=en** : source language
+2. **&tl=fr** : target language
+3. **&dt=t&q=Hello+World** : query text
 
 
 ###2. 처리 결과 (Response)
@@ -79,11 +89,43 @@ DOM Parser 를 사용하여 string.xml 을 읽고 문자열을 번역기를 통�
 
 ###5. 활용2 (iOSStringTranslator)
 
-( TODO ) 
+XCode 에서 localization 에 사용되는 xliff 를 번역한 결과로 생성하도록 한다.
+*XCode 프로젝트를 선택하고 Editor > Export For Localization 을 선택하면 xliff 파일을 얻을 수 있다. 
+번역한 후에 Import For Localization 을 선택해서 번역본을 적용할 수 있다.*
+
+**Source:** string.xliff
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- ...(생략)... -->
+<body>
+  <trans-unit id="L0B-Ka-xwb.text">
+    <source>Hello World</source>
+    <target>Hello World</target>
+    <note>Class = "UILabel"; text = "Hello World"; ObjectID = "L0B-Ka-xwb";</note>
+  </trans-unit>
+</body>
+<!-- ...(생략)... -->
+```
+
+**Source:** string-fr.xliff
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- ...(생략)... -->
+<body>
+  <trans-unit id="L0B-Ka-xwb.text">
+    <source>Hello World</source>
+    <target>Bonjour le monde</target>
+    <note>Class = "UILabel"; text = "Hello World"; ObjectID = "L0B-Ka-xwb";</note>
+  </trans-unit>
+</body>
+<!-- ...(생략)... -->
+```
+
 
 ###4. Reference
 - https://translate.google.com/
 - http://docs.oracle.com/javase/6/docs/api/java/util/Locale.html
 - http://useragentstring.com/index.php
 - http://developer.android.com/training/basics/supporting-devices/languages.html
+- https://ctrlq.org/code/19909-google-translate-api
 

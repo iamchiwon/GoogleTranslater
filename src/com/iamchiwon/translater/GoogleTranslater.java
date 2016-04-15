@@ -32,11 +32,11 @@ public class GoogleTranslater {
 	}
 
 	public String translate(final String fromText) throws IOException {
-		final String urlTemp = "https://translate.google.co.kr/translate_a/single?client=t&sl=auto&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&dt=t&dt=at&ie=UTF-8&oe=UTF-8&otf=2&ssel=0&tsel=0&kc=2&tk=365832|232076";
+		final String urlTemp = "https://translate.googleapis.com/translate_a/single?client=gtx";
 		final String encoded = URLEncoder.encode(fromText, "UTF-8");
-		final String fromLang = "&hl=" + this.fromLang.getLanguage();
+		final String fromLang = "&sl=" + this.fromLang.getLanguage();
 		final String toLang = "&tl=" + this.toLang.getLanguage();
-		final String query = "&q=" + encoded;
+		final String query = "&dt=t&q=" + encoded;
 
 		String response = httpRequest(urlTemp + fromLang + toLang + query);
 
