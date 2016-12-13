@@ -40,7 +40,7 @@ https://translate.googleapis.com/translate_a/single?client=gtx
 ```
 이거 뭐야? JSON도 아니고..
 내용을 보니, 첫번째 문자열 "..." 에서 원하는 문구가 모두 있다. 이 부분만 떼도록 해보자.
-첫번쩨 " 를 찾고, 두번째 " 를 찾아서 그 사이의 문자만 찾아낸다.
+첫번째 " 를 찾고, 두번째 " 를 찾아서 그 사이의 문자만 찾아낸다.
 
 ```java
     private String parse(String source) {
@@ -56,7 +56,7 @@ https://translate.googleapis.com/translate_a/single?client=gtx
 **실행결과**
 
 
-interaction
+CLI
 ```console
 << 안녕하세요
 >> Bonjour
